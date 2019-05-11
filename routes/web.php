@@ -19,10 +19,13 @@ Route::get('/', function () {
 Route::prefix('basic-website')->group(function() {
     
     // Load View Home
-    Route::get('/', 'BasicWebsiteController@index')->name('basic-index');
+    Route::get('/', 'BasicWebsiteController@index')->name('basic.index');
     // Load View About
-    Route::get('/about', 'BasicWebsiteController@about')->name('basic-about');
+    Route::get('/about', 'BasicWebsiteController@about')->name('basic.about');
     // Load View Services
-    Route::get('/services', 'BasicWebsiteController@services')->name('basic-services');
+    Route::get('/services', 'BasicWebsiteController@services')->name('basic.services');
 
 });
+
+// Route Group For CRUD Article
+Route::resource('article', 'ArticleController');
